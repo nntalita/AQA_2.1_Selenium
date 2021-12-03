@@ -12,7 +12,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FormTest {
-
     private WebDriver driver;
 
     @BeforeAll
@@ -38,14 +37,12 @@ public class FormTest {
     @org.junit.jupiter.api.Test
     public void shouldsendForm() throws InterruptedException {
         driver.get("http://localhost:9999/");
-
-
         driver.findElement(By.cssSelector("[data-test-id=\"name\"] input")).sendKeys("Арчи Марчи");
         driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79024560869");//        List<WebElement> textfields = driver.findElements(By.className("input__control"));
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.tagName("button")).click();
         String actualAnswer = driver.findElement(By.className("Success_successBlock__2L3Cw")).getText().trim();
-        String expectedAnswer = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
+        String expectedAnswer = "Ваша заявка успешно отправлена! Привет! Наш менеджер свяжется с вами в ближайшее время.";
         assertEquals(expectedAnswer, actualAnswer, "текст ответа не совпадает");
 
     }
