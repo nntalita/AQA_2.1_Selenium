@@ -42,7 +42,7 @@ public class FormTest {
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.tagName("button")).click();
         String actualAnswer = driver.findElement(By.className("Success_successBlock__2L3Cw")).getText().trim();
-        String expectedAnswer = "Ваша заявка успешно отправлена! Привет! Наш менеджер свяжется с вами в ближайшее время.";
+        String expectedAnswer = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         assertEquals(expectedAnswer, actualAnswer, "текст ответа не совпадает");
 
     }
